@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+Kenes Sample
+</title>
+<link rel="stylesheet" href="css/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+
+</head>
+    <body ng-app="kenesApp">
+        <div ng-controller="kenesCtrl">
+        <h2>Kenes Sample</h2>
+        <table>
+            <tr>
+                <td>ID</td>
+            </tr>
+            <tr ng-repeat="r in resp">
+                <td ng-click="orderDetails(r)">{{r.number}}</td>
+            </tr>
+        </table>
+        
+
+
+        <div  id="popup1" class="overlay" ng-style="{'display' : isTrue ? 'block' : 'none'}">
+            <div class="popup">
+                <h2>Order Id: {{details.order_id}}</h2>
+                <a class="close" href="#" ng-click="closePopUp()">&times;</a>
+                <div class="content">
+                    currency: {{details.currency}}
+                </div>
+                <div class="content">
+                    order_date: {{details.order_date}}
+                </div>
+                <div class="content">
+                    order_status: {{details.order_status}}
+                </div>
+                <div class="content">
+                    total: {{details.total}}
+                </div>
+                <div class="content">
+                    shipping_cost: {{details.shipping_cost}}
+                </div>
+                <div class="content">
+                    notes: {{details.notes}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    </body>
+</html>
